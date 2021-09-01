@@ -1,0 +1,11 @@
+Открыть файл
+sudo nano /etc/anacrontab
+
+Добавить в конец строчку
+1 5 n1-parser . /home/user/projects/n1-parser/.env && /home/user/projects/n1-parser/.venv/bin/python /home/user/projects/n1-parser/parser.py
+
+Немедленно выполнить задание
+sudo anacron -f n1-parser -n
+
+Посмотреть log
+grep 'anacron' /var/log/syslog
